@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using UrlShortener.BLL.Interfaces;
+using UrlShortener.BLL.Services;
 using UrlShortener.DAL.Data;
 using UrlShortener.DAL.Entities;
 using UrlShortener.DAL.Repositories.Interfaces.Base;
@@ -55,6 +57,10 @@ builder.Services.AddAuthorization();
 
 // Repositories
 builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+
+// Services
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IUrlShortenerService, UrlShortenerService>();
 
 builder.Services.AddCors(options =>
 {
