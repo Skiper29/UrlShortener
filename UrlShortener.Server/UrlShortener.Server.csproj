@@ -7,6 +7,7 @@
     <SpaRoot>..\urlshortener.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:61007</SpaProxyServerUrl>
+    <UserSecretsId>5f08f655-5ef3-40db-995a-fbfe6bc99bb0</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

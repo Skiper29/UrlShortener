@@ -9,6 +9,7 @@ using UrlShortener.DAL.Data;
 using UrlShortener.DAL.Entities;
 using UrlShortener.DAL.Repositories.Interfaces.Base;
 using UrlShortener.DAL.Repositories.Realizations.Base;
+using UrlShortener.Server.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -104,6 +105,8 @@ app.UseCors("ReactApp");
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+await app.CreateInitialDataAsync();
 
 app.MapControllers();
 app.MapFallbackToFile("/index.html");
