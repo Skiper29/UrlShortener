@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="UrlShortener.BLL/UrlShortener.BLL.csproj" Id="366c13bd-b0f5-4968-893c-274e843350ba" />
+  <Project Path="urlshortener.client/urlshortener.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="UrlShortener.DAL/UrlShortener.DAL.csproj" Id="0de6a7ba-3639-4751-8ae5-36e06e30100e" />
+  <Project Path="UrlShortener.Server/UrlShortener.Server.csproj" />
+</Solution>
