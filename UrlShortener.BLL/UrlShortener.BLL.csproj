@@ -10,4 +10,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UrlShortener.DAL\UrlShortener.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
