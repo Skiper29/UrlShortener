@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 namespace UrlShortener.Server.Controllers.Common;
 
 [ApiController]
+[Route("api/[controller]")]
 public class BaseApiController : ControllerBase
 {
     private IMediator? _mediator;
