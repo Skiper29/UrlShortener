@@ -27,7 +27,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 
 //JWT
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-var secret = jwtSettings["Secret"]!;
+var secret = jwtSettings["SecretKey"]!;
 
 builder.Services.AddAuthentication(options =>
 {
