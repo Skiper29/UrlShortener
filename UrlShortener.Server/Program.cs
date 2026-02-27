@@ -62,6 +62,9 @@ builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 builder.Services.AddScoped<IUrlShortenerService, UrlShortenerService>();
 
+// AutoMapper
+builder.Services.AddAutoMapper(cfg => { }, AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactApp", policy =>
