@@ -4,4 +4,4 @@ using UrlShortener.BLL.DTOs.Urls;
 
 namespace UrlShortener.BLL.Features.Urls.Commands.Create;
 
-public record CreateShortUrlCommand(CreateUrlRequest CreateUrlRequest, string UserId) : IRequest<Result<UrlResponse>>;
+public record CreateShortUrlCommand(CreateUrlRequest CreateUrlRequest, string UserId, string UserName) : IRequest<Result<UrlResponse>>;

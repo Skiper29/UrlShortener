@@ -44,17 +44,18 @@ public class CreateShortUrlCommandHandler : IRequestHandler<CreateShortUrlComman
 
         var createdEntity = await _repositoryWrapper.UrlRepository.CreateAsync(entity);
 
+        await _repositoryWrapper.SaveChangesAsync();
+
         createdEntity.ShortCode = _urlShortenerService.GenerateShortCode(createdEntity.Id);
 
-        var result = _repositoryWrapper.UrlRepository.Update(createdEntity);
+        await _repositoryWrapper.SaveChangesAsync();
 
-        if (result is null)
+        var response = _mapper.Map<UrlResponse>(createdEntity);
+
+        return Result.Ok(response with
         {
-            return Result.Fail("Failed to create short URL.");
-        }
-
-        var response = _mapper.Map<UrlResponse>(result);
-
-        return Result.Ok(response with { ShortUrl = $"/r/{createdEntity.ShortCode}" });
+            ShortUrl = $"/r/{createdEntity.ShortCode}",
+            CreatedBy = request.UserName
+        });
     }
 }

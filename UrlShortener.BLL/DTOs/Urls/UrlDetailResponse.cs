@@ -1,12 +1,13 @@
 ﻿namespace UrlShortener.BLL.DTOs.Urls;
 
-public record UrlDetailResponse(
-    int Id,
-    string OriginalUrl,
-    string ShortCode,
-    string ShortUrl,
-    string CreatedById,
-    string CreatedByUserName,
-    string CreatedByEmail,
-    DateTime CreatedAt
-);
+public record UrlDetailResponse
+{
+    public int Id { get; set; }
+    public string OriginalUrl { get; set; } = string.Empty;
+    public string ShortCode { get; set; } = string.Empty;
+    public string ShortUrl { get; set; } = string.Empty;
+    public string CreatedById { get; set; } = string.Empty;
+    public string CreatedByUserName { get; set; } = string.Empty;
+    public string CreatedByEmail { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; }
+}
