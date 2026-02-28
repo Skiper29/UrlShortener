@@ -1,0 +1,12 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
