@@ -1,0 +1,12 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title{
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111827;
+}
