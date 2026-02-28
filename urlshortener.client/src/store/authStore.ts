@@ -1,6 +1,6 @@
 import {create} from "zustand";
 import type {AuthUser} from "../types/auth.types.ts";
-import {persist} from "zustand/middleware/persist";
+import {persist} from "zustand/middleware";
 
 
 interface AuthState {
