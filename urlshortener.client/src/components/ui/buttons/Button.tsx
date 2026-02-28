@@ -24,6 +24,10 @@ export const Button = ({
         disabled={isLoading || disabled}
         {...rest}
     >
-        {isLoading ? <span className={styles.spinner} /> : children}
+        {isLoading && <span className={styles.spinner} />}
+
+        <span style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+            {children}
+        </span>
     </button>
 );

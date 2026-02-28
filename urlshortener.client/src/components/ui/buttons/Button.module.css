@@ -1,5 +1,6 @@
 .btn {
-    display: inline-block;
+    position: relative;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     border: none;
@@ -32,6 +33,7 @@
 
 /* Spinner */
 .spinner {
+    position: absolute;
     width: 16px;
     height: 16px;
     border: 2px solid rgba(255, 255, 255, 0.4);
