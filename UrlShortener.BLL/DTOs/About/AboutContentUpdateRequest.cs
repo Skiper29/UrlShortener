@@ -1,4 +1,6 @@
-﻿namespace UrlShortener.BLL.DTOs.About;
+﻿using System.ComponentModel.DataAnnotations;
 
-public record AboutContentUpdateRequest(string Content);
+namespace UrlShortener.BLL.DTOs.About;
+
+public record AboutContentUpdateRequest([Required][MaxLength(5000)] string Content);
 
