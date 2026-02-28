@@ -5,5 +5,8 @@ export const API_ROUTES = {
     },
     URL: {
         BASE: "urls",
+    },
+    ABOUT:{
+        BASE: "about",
     }
 };
