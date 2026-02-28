@@ -19,13 +19,13 @@ public class GetAboutContentQueryHandler : IRequestHandler<GetAboutContentQuery,
 
     public async Task<Result<AboutContentResponse>> Handle(GetAboutContentQuery request, CancellationToken cancellationToken)
     {
-        var aboutContent = await _repository.AboutContentRepository.GetAllAsync();
+        var aboutContent = await _repository.AboutContentRepository.GetFirstOrDefaultAsync();
 
-        if (aboutContent is null || !aboutContent.Any())
+        if (aboutContent == null)
         {
-            return Result.Fail(new Error("About content not found."));
+            return Result.Fail("About content not found.");
         }
 
-        return Result.Ok(_mapper.Map<AboutContentResponse>(aboutContent.First()));
+        return Result.Ok(_mapper.Map<AboutContentResponse>(aboutContent));
     }
 }
