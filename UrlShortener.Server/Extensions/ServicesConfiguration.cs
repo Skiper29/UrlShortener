@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using UrlShortener.DAL.Data;
 using UrlShortener.DAL.Entities;
 using UrlShortener.DAL.Enums;
 
@@ -10,6 +11,7 @@ public static class ServicesConfiguration
     {
         await app.AddRoles();
         await app.CreateInitialAdminAsync();
+        await app.AddAboutContent();
     }
 
     public static async Task AddRoles(this WebApplication app)
@@ -56,5 +58,26 @@ public static class ServicesConfiguration
 
             await userManager.AddToRoleAsync(adminUser, nameof(AppRole.Admin));
         }
+    }
+
+    public static async Task AddAboutContent(this WebApplication app)
+    {
+        await using var asyncServiceScope = app.Services.CreateAsyncScope();
+        var dbContext = asyncServiceScope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+        if (!dbContext.AboutContents.Any())
+        {
+            var aboutContent = new AboutContent
+            {
+                Content = "This URL Shortener uses a Base62 encoding algorithm. " +
+                          "Each URL is saved to the database and gets an auto-incremented ID. " +
+                          "That ID is then encoded into a short alphanumeric string (a-z, A-Z, 0-9), " +
+                          "producing a unique code of up to 7 characters.",
+                UpdatedAt = DateTime.UtcNow
+            };
+            dbContext.AboutContents.Add(aboutContent);
+            await dbContext.SaveChangesAsync();
+        }
+
     }
 }
