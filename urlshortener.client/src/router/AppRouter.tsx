@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {AuthPage} from "../features/auth/pages/AuthPage.tsx";
 import {Navbar} from "../components/layout/Navbar.tsx";
-import {UrlsPage} from "../features/urls/pages/UrlsPage.tsx";
+import {UrlsPage} from "../features/urls/pages/main-page/UrlsPage.tsx";
 
 export const AppRouter = () => (
     <BrowserRouter>

@@ -1,9 +1,9 @@
-import {useAuthStore} from "../../../store/authStore.ts";
-import {useUrls} from "../hooks/useUrls.ts";
+import {useAuthStore} from "../../../../store/authStore.ts";
+import {useUrls} from "../../hooks/useUrls.ts";
 import styles from "./UrlsPage.module.css";
-import {ErrorMessage} from "../../../components/ui/errors/ErrorMessage.tsx";
-import {UrlTable} from "../components/url-table/UrlTable.tsx";
-import {AddUrlForm} from "../components/add-form/AddUrlForm.tsx";
+import {ErrorMessage} from "../../../../components/ui/errors/ErrorMessage.tsx";
+import {UrlTable} from "../../components/url-table/UrlTable.tsx";
+import {AddUrlForm} from "../../components/add-form/AddUrlForm.tsx";
 
 export const UrlsPage = () => {
     const { user, isAuthenticated } = useAuthStore();
