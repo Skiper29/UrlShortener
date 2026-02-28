@@ -9,6 +9,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     public DbSet<ShortenedUrl> ShortenedUrls { get; set; }
+    public DbSet<AboutContent> AboutContents { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

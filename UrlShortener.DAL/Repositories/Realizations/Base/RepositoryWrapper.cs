@@ -9,6 +9,7 @@ public class RepositoryWrapper : IRepositoryWrapper
 {
     private readonly AppDbContext _dbContext;
     private IUrlRepository? _urlRepository;
+    private IAboutContentRepository? _aboutContentRepository;
 
     public RepositoryWrapper(AppDbContext context)
     {
@@ -16,6 +17,7 @@ public class RepositoryWrapper : IRepositoryWrapper
     }
 
     public IUrlRepository UrlRepository => _urlRepository ??= new UrlRepository(_dbContext);
+    public IAboutContentRepository AboutContentRepository => _aboutContentRepository ??= new AboutContentRepository(_dbContext);
 
     public int SaveChanges()
     {
