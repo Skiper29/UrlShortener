@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UrlShortener.BLL.Features.Urls.Queries.GetByShortCode;
-using UrlShortener.Server.Controllers.Common;
 
 namespace UrlShortener.Server.Controllers;
 
-public class RedirectController : BaseApiController
+[ApiController]
+public class RedirectController : ControllerBase
 {
-    [HttpGet("{shortCode}")]
+    private IMediator? _mediator;
+    protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>()!;
+
+    [HttpGet("/r/{shortCode}")]
     [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status302Found)]
