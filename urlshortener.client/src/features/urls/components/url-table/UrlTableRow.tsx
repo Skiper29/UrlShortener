@@ -19,7 +19,6 @@ const canDelete = (url: UrlResponse, user: AuthUser | null): boolean => {
 
 export const UrlTableRow = ({ url, currentUser, onDelete }: Props) => {
     const  navigate = useNavigate();
-    const baseUrl = import.meta.env.VITE_API_URL?.replace('/api', '') ?? 'https://localhost:7000';
 
     return (
         <tr className={styles.row}>
@@ -38,7 +37,7 @@ export const UrlTableRow = ({ url, currentUser, onDelete }: Props) => {
             </td>
             <td className={styles.cell}>
                 <a
-                    href={`${baseUrl}/r/${url.shortCode}`}
+                    href={`/r/${url.shortCode}`}
                     target="_blank"
                     rel="noreferrer"
                     className={styles.shortLink}
