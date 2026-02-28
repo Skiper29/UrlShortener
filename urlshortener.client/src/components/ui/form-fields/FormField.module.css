@@ -3,7 +3,12 @@
     flex-direction: column;
     gap: 6px;
     width: 100%;
-    position: relative;
+}
+
+.field-without-gap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .label {

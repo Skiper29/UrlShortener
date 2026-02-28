@@ -8,7 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const FormField = ({ label, error, id, ...rest }: Props) => (
-    <div className={styles.field}>
+    <div className={`${label.length > 0 ? styles.field : styles.fieldWithoutGap}`}>
         <label className={styles.label} htmlFor={id}>
             {label}
         </label>

@@ -44,7 +44,7 @@ export const AddUrlForm = ({ onAdd }: Props) => {
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 <FormField
                     id="originalUrl"
-                    label="Original URL"
+                    label=""
                     placeholder="https://example.com/very/long/url"
                     error={errors.originalUrl?.message}
                     {...register('originalUrl')}
