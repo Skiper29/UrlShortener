@@ -13,6 +13,10 @@ export const Navbar = () => {
             <Link to="/urls" className={styles.logo}>
                 URL Shortener
             </Link>
+            <div className={styles.links}>
+                <Link to="/urls" className={styles.navLink}>URLs</Link>
+                <Link to="/about" className={styles.navLink}>About</Link>
+            </div>
             <div className={styles.actions}>
                 {isAuthenticated ? (
                     <>

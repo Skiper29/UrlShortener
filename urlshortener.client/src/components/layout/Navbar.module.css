@@ -43,3 +43,22 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
+
+.links {
+    display: flex;
+    gap: 4px;
+}
+
+.navLink {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    transition: background 0.15s, color 0.15s;
+}
+
+.navLink:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
