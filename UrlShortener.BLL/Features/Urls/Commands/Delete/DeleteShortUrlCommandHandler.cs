@@ -1,6 +1,5 @@
 ﻿using FluentResults;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using UrlShortener.DAL.Entities;
 using UrlShortener.DAL.Repositories.Interfaces.Base;
 using UrlShortener.DAL.Repositories.Options;
@@ -10,12 +9,10 @@ namespace UrlShortener.BLL.Features.Urls.Commands.Delete;
 public class DeleteShortUrlCommandHandler : IRequestHandler<DeleteShortUrlCommand, Result<Unit>>
 {
     private readonly IRepositoryWrapper _repository;
-    private readonly UserManager<AppUser> _userManager;
 
-    public DeleteShortUrlCommandHandler(IRepositoryWrapper repository, UserManager<AppUser> userManager)
+    public DeleteShortUrlCommandHandler(IRepositoryWrapper repository)
     {
         _repository = repository;
-        _userManager = userManager;
     }
 
     public async Task<Result<Unit>> Handle(DeleteShortUrlCommand request, CancellationToken cancellationToken)
