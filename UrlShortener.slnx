@@ -6,4 +6,5 @@
   </Project>
   <Project Path="UrlShortener.DAL/UrlShortener.DAL.csproj" Id="0de6a7ba-3639-4751-8ae5-36e06e30100e" />
   <Project Path="UrlShortener.Server/UrlShortener.Server.csproj" />
+  <Project Path="UrlShortener.UnitTests/UrlShortener.UnitTests.csproj" Id="7a60721d-eb6c-44f1-8e37-a860e9619084" />
 </Solution>
